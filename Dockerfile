@@ -1,4 +1,4 @@
-FROM		hauptmedia/java:oracle-java7
+FROM		hauptmedia/java:oracle-java8
 MAINTAINER	Julian Haupt <julian.haupt@hauptmedia.de>
 
 ENV		CONFLUENCE_VERSION 5.8.4
