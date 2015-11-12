@@ -1,7 +1,7 @@
 FROM		hauptmedia/java:oracle-java8
 MAINTAINER	Julian Haupt <julian.haupt@hauptmedia.de>
 
-ENV		CONFLUENCE_VERSION 5.8.4
+ENV		CONFLUENCE_VERSION 5.8.16
 ENV		MYSQL_CONNECTOR_J_VERSION 5.1.34
 
 ENV		CONFLUENCE_HOME     /var/atlassian/application-data/confluence
