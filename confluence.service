@@ -1,0 +1,27 @@
+[Unit]
+Description=Adninja Confluence Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+Environment="NAME=confluence"
+TimeoutStartSec=300
+ExecStartPre=-/usr/bin/docker kill ${NAME}
+ExecStartPre=-/usr/bin/docker rm -f ${NAME}
+ExecStartPre=/usr/bin/docker pull hauptmedia/atlassian-confluence
+ExecStart=/usr/bin/docker run \
+	--name ${NAME} \
+	-p 127.0.0.1:8090:8090 \
+	-v /var/volumes/${NAME}/var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence \
+	-e CONNECTOR_PROXYNAME=confluence.domain.com \
+	-e CONNECTOR_PROXYPORT=80 \
+	-e CONNECTOR_SECURE=false \
+	-e CONNECTOR_SCHEME=http \
+	-e CONTEXT_PATH=/ \
+	hauptmedia/atlassian-confluence	
+ExecStop=/usr/bin/docker stop ${NAME}
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
