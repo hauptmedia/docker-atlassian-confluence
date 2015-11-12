@@ -1,5 +1,5 @@
 [Unit]
-Description=Adninja Confluence Service
+Description=Confluence Service
 After=docker.service
 Requires=docker.service
 
