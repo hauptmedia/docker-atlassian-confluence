@@ -37,8 +37,6 @@ USER            ${RUN_USER}:${RUN_GROUP}
 
 EXPOSE		8090
 
-VOLUME		["${CONFLUENCE_INSTALL_DIR}"]
-
 WORKDIR		${CONFLUENCE_INSTALL_DIR}
 ENTRYPOINT	["bin/docker-entrypoint.sh"]
 CMD		["bin/start-confluence.sh", "-fg"]
