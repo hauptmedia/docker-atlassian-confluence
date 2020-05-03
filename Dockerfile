@@ -1,4 +1,4 @@
-FROM		atlassian/confluence-server:6.10.1
+FROM		atlassian/confluence-server:7.4.0
 MAINTAINER	Julian Haupt <julian.haupt@hauptmedia.de>
 
 
